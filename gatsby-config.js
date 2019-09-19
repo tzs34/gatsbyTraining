@@ -5,5 +5,9 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Test Site',
+    description: 'An Gatsby Experiment',
+    author: 'Dave T',
+  },
 }
