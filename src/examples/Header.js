@@ -1,23 +1,20 @@
+/* 
+REMEBER
+ONLY USE PAGE QUERY ON PAGES
+
+*/
+
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-const getMetaData = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-  }
-`
+import { StaticQuery, graphql } from 'gatsby'
 
-const Header = () => {
+const Header = props => {
   const {
-    site: {
-      siteMetadata: { author, title },
+    data: {
+      site: {
+        siteMetadata: { author, title },
+      },
     },
-  } = useStaticQuery(getMetaData)
-
+  } = props
   return (
     <>
       <div>{title}</div>
