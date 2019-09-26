@@ -5,7 +5,9 @@ import { Link } from 'gatsby'
 const Banner = ({ title }) => {
   return (
     <div className={styles.banner}>
-      <Link to="/available-cars/">{title}</Link>
+      <div className={styles.hoverbar}>
+        <Link to="/available-cars/">{title}</Link>
+      </div>
     </div>
   )
 }
