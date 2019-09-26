@@ -1,25 +1,30 @@
 .banner {
   text-align: center;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainWhite);
+  opacity: 0.8;
+  outline: rgba(255, 255, 255, 0.2) solid 2px;
 }
-.banner h1 {
-  font-size: 3.3rem;
+.banner a {
+  font-size: 2rem;
+  color: white;
+  opacity: 0.5;
   text-transform: uppercase;
   margin-bottom: 2rem;
   padding: 0 1rem;
   letter-spacing: 6px;
-}
-.banner p {
   width: 85%;
   margin: 0 auto;
   margin-bottom: 2rem;
+  text-decoration: none;
 }
+
+.banner a:hover {
+  opacity: 0.9;
+}
+
 @media screen and (min-width: 768px) {
-  .banner h1 {
+  .banner a {
     font-size: 4.5rem;
-  }
-  .banner p {
     width: 70%;
   }
 }

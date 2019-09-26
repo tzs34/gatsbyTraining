@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from '../css/banner.module.css'
-const Banner = ({ title, info, children }) => {
+import { Link } from 'gatsby'
+
+const Banner = ({ title }) => {
   return (
     <div className={styles.banner}>
-      <h1>{title}</h1>
-      <p>{info}</p>
-      {children}
+      <Link to="/available-cars/">{title}</Link>
     </div>
   )
 }

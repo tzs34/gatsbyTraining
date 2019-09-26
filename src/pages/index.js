@@ -39,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
     --body-color: #F7F7F7;
     --header-link-hover-color: white; 
     --text-shadow: #eeee00 0 0 1px, #ADD8E6 3px 3px 3px;
+    --mainSpacing: 1px;
+    --mainWhite: white;
   }
         
   body {
@@ -61,7 +63,7 @@ export default ({ data }) => (
     <GlobalStyle />
     <Layout>
       <StyledHero img={data.heroImg.childImageSharp.fluid}>
-        <Banner />
+        <Banner title="Explore the future today" />
       </StyledHero>
     </Layout>
   </>
