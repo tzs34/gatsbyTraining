@@ -27,16 +27,13 @@
 
 #formdiv {
   background-color: #3c3c3c;
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 35px;
-  padding-bottom: 50px;
-  width: 450px;
-  float: left;
-  left: 50%;
-  position: absolute;
-  margin-left: -260px;
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: calc(100vw - 40px);
+  margin: 20px;
 }
 
 .feedbackinput {
@@ -115,13 +112,16 @@ textarea {
   line-height: 150%;
 }
 
-input:hover,
+input[type='text']:hover,
 textarea:hover,
-input:focus,
+input[type='text']:focus,
 textarea:focus {
-  background-color: #3498db;
+  background-color: white;
 }
 
+input[type='submit']:hover {
+  background-color: #3498db;
+}
 .buttonblue {
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   float: left;
@@ -163,15 +163,4 @@ textarea:focus {
 .submit:hover .ease {
   width: 100%;
   color: #3498db;
-}
-
-@media only screen and (max-width: 580px) {
-  #form-div {
-    left: 3%;
-    margin-right: 3%;
-    width: 88%;
-    margin-left: 0;
-    padding-left: 3%;
-    padding-right: 3%;
-  }
 }
