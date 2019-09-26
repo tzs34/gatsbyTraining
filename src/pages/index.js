@@ -1,5 +1,6 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import StyledHero from '../components/styled/styled-hero'
 import Banner from '../components/banner'
@@ -55,13 +56,25 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default () => (
+export default ({ data }) => (
   <>
     <GlobalStyle />
     <Layout>
-      <StyledHero>
+      <StyledHero img={data.heroImg.childImageSharp.fluid}>
         <Banner />
       </StyledHero>
     </Layout>
   </>
 )
+
+export const query = graphql`
+  query {
+    heroImg: file(relativePath: { eq: "hero-image.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1500) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
