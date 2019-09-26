@@ -1,5 +1,9 @@
 import React from 'react'
-
-const AvailableCars = () => <div>Cars</div>
-
-export default AvailableCars
+import Layout from '../components/layout/layout'
+import GlobalStyle from '../components/styled/global-style'
+export default () => (
+  <>
+    <GlobalStyle />
+    <Layout></Layout>
+  </>
+)
