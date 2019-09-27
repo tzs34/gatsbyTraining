@@ -4,26 +4,26 @@ import GlobalStyle from '../components/styled/global-style'
 import VehicleTile from '../components/vehicle/vehicle-tile'
 import { graphql } from 'gatsby'
 
-const AvailableVehicles = props => {
-  const [data, setData] = useState([])
+const AvailableVehicles = ({ data }) => {
+  const [carData, setCarData] = useState([])
 
   useEffect(() => {
-    const {
-      data: {
-        cars: { edges: carData },
-      },
-    } = props
+    if (data) {
+      const {
+        cars: { edges: nodeArray },
+      } = data
 
-    setData(carData)
+      setCarData(nodeArray)
+    }
   }, [])
 
   return (
     <>
       <GlobalStyle />
       <Layout>
-        {data.length > 0 && (
+        {carData.length > 0 && (
           <div>
-            {data.map(({ node }, index) => (
+            {carData.map(({ node }, index) => (
               <VehicleTile {...node} key={index} />
             ))}
           </div>
@@ -33,27 +33,27 @@ const AvailableVehicles = props => {
   )
 }
 
-export const getCars = graphql`
-  query {
-    cars: allContentfulCars {
-      edges {
-        node {
-          model
-          manual
-          mileage
-          hybrid
-          image {
-            fluid(maxWidth: 500, maxHeight: 300) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          efficient
-          owners
-          registration
-        }
-      }
-    }
-  }
-`
+// export const getCars = graphql`
+//   query {
+//     cars: allContentfulCars {
+//       edges {
+//         node {
+//           model
+//           manual
+//           mileage
+//           hybrid
+//           image {
+//             fluid(maxWidth: 500, maxHeight: 300) {
+//               ...GatsbyContentfulFluid
+//             }
+//           }
+//           efficient
+//           owners
+//           registration
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default AvailableVehicles
