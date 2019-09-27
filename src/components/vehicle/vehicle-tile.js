@@ -3,12 +3,6 @@ import styled from 'styled-components'
 import Image from 'gatsby-image'
 import { GridRow, GridColumn, Line } from '../styled/components'
 import InfoIcon from './info-icon'
-import Efficiency from './vehicle-icons/efficient'
-import Mileage from './vehicle-icons/mileage'
-import Power from './vehicle-icons/power'
-import Manual from './vehicle-icons/manual'
-import Hybrid from './vehicle-icons/hybrid'
-import Owners from './vehicle-icons/owners'
 
 const ImageSection = styled.div`
   &:hover {
@@ -43,8 +37,6 @@ const VehicleTitleSubHeader = styled.div`
 const VehicleSpecs = styled.div`
   display: flex;
   flex-wrap: wrap;
-  ${({ padding }) =>
-    padding && padding.paddingLeft && `padding-left: ${padding.paddingLeft}px`};
 `
 
 const VehicleTile = ({
@@ -60,7 +52,9 @@ const VehicleTile = ({
   <>
     <GridRow columns={6}>
       <GridColumn desktop={3} tablet={4} mobile={4}>
-        <ImageSection>{image && <Image fluid={image.fluid} />}</ImageSection>
+        <ImageSection>
+          {image && <Image fluid={image.fluid} width={500} height={300} />}
+        </ImageSection>
       </GridColumn>
       <GridColumn desktop={3} tablet={2} mobile={2}>
         <VehicleInfoSectionContainer>

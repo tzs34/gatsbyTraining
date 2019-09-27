@@ -1,22 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/layout/layout'
 import GlobalStyle from '../components/styled/global-style'
 import VehicleTile from '../components/vehicle/vehicle-tile'
 import { graphql } from 'gatsby'
 
 const AvailableVehicles = props => {
-  const {
-    data: {
-      cars: { edges: carData },
-    },
-  } = props
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const {
+      data: {
+        cars: { edges: carData },
+      },
+    } = props
+
+    setData(carData)
+  }, [])
+
+  console.log('render page')
+  console.log(data)
   return (
     <>
       <GlobalStyle />
       <Layout>
-        {props.data && (
+        {data.length > 0 && (
           <div>
-            {carData.map(({ node }, index) => (
+            {data.map(({ node }, index) => (
               <VehicleTile {...node} key={index} />
             ))}
           </div>
