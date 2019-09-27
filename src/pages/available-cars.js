@@ -42,6 +42,7 @@ export const getCars = graphql`
           }
           efficient
           owners
+          registration
         }
       }
     }
