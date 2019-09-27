@@ -5,7 +5,9 @@
   </a>
 </p>
 
-This site is built on the Gatsby starter repo.
+### This site is built on the Gatsby starter repo.
+
+To run the demo please use gatsby develop in the termoal at the root of the project.
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
