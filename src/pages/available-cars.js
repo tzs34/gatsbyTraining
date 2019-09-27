@@ -17,8 +17,6 @@ const AvailableVehicles = props => {
     setData(carData)
   }, [])
 
-  console.log('render page')
-  console.log(data)
   return (
     <>
       <GlobalStyle />
