@@ -55,6 +55,7 @@ const VehicleTile = ({
   mileage,
   model,
   owners,
+  registration,
 }) => (
   <>
     <GridRow columns={6}>
@@ -71,7 +72,10 @@ const VehicleTile = ({
           <VehicleSpecs>
             <InfoIcon label="Charging Time" value={efficient}></InfoIcon>
             <InfoIcon label="Hybrid" value={hybrid ? 'Yes' : 'No'}></InfoIcon>
-            <InfoIcon label="Registartion Date" value="registration"></InfoIcon>
+            <InfoIcon
+              label="Registartion Date"
+              value={new Date(registration).toDateString()}
+            ></InfoIcon>
             <InfoIcon label="Current Milage (miles)" value={mileage}></InfoIcon>
             <InfoIcon
               label="Manual / Automatic"
